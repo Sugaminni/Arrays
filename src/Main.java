@@ -18,7 +18,7 @@ public class Main {
         for (int i = 0; i < nums.length; i++) {
             sum += nums[i];
         }
-        System.out.println("sum = " + sum);
+        System.out.println("sum: " + sum);
 
         // Finds the largest element in the array
         int max = Integer.MIN_VALUE;
@@ -27,7 +27,16 @@ public class Main {
                 max = nums[i];
             }
         }
-        System.out.println(max);
+        System.out.println("max: " + max);
+
+        //Finds the smallest element in the array
+        int min = Integer.MAX_VALUE;
+        for (int i = 0; i < nums.length; i++) {
+            if (nums[i] < min) {
+                min = nums[i];
+            }
+        }
+        System.out.println("min: " + min);
 
         // Reverses the array
         int left = 0;
@@ -39,6 +48,7 @@ public class Main {
             left++;
             right--;
         }
+        System.out.println("Reversed:");
         for (int i = 0; i < nums.length; i++) {
             System.out.println(nums[i]);
         }
@@ -47,7 +57,7 @@ public class Main {
         boolean found = false;
         for (int i = 0; i < nums.length; i++) {
             if (nums[i] == target) {
-                System.out.println("target found at index: " + i); // Will return index = 3 since the array was reversed
+                System.out.println("target value found at index: " + i); // Will return index = 3 since the array was reversed
                 found = true;
                 break;
             }
@@ -55,5 +65,13 @@ public class Main {
         if (!found) {
             System.out.println(false);
         }
+
+        // Calculates the average of all elements in the array
+        double average = 0;
+        for (int i = 0; i < nums.length; i++) {
+            sum += nums[i];
+            average = (double) sum / nums.length; // Changes the value of sum into a double
+        }
+        System.out.println("average value: " + average);
     }
 }
