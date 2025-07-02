@@ -2,6 +2,10 @@ public class Main {
 
     public static void main(String[] args) {
 
+        // Initializes string s and charTarget
+        String s = "hello world";
+        char charTarget = 'o';
+
         // Initializes an int array with numbers
         int[] nums = {30, 50, 10, 40, 20, 55, 50, 23, 47};
         int target = 20;
@@ -44,5 +48,8 @@ public class Main {
 
         // Finds occurrence of target and prints out indices
         ArrayUtils.findOccurrences(nums, target);
+
+        // Finds the position of the specific character in a string
+        System.out.print("Character found at: " + StringUtils.findChar(s, charTarget));
     }
 }
