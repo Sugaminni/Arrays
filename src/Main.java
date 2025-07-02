@@ -5,7 +5,7 @@ public class Main {
         // Practice on Arrays
 
         // Initializes an int array with numbers
-        int[] nums = {10, 20, 30, 40, 50};
+        int[] nums = {10, 20, 30, 40, 50, 55};
         int sum = 0;
         int target = 20;
 
@@ -73,5 +73,17 @@ public class Main {
             average = (double) sum / nums.length; // Changes the value of sum into a double
         }
         System.out.println("average value: " + average);
+
+        // Counts even and odd numbers
+        int evenCount = 0, oddCount = 0;
+        for (int i = 0; i < nums.length; i++) {
+            if(nums[i] % 2 == 0){
+                evenCount++;
+            }
+            else if(nums[i] % 2 == 1){
+                oddCount++;
+            }
+        }
+        System.out.println("Even numbers: " + evenCount + " Odd Numbers: " + oddCount);
     }
 }
