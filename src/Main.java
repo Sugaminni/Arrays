@@ -5,14 +5,16 @@ public class Main {
         // Practice on Arrays
 
         // Initializes an int array with numbers
-        int[] nums = {10, 20, 30, 40, 50, 55};
+        int[] nums = {30, 50, 10, 40, 20, 55};
         int sum = 0;
         int target = 20;
 
         // Prints out the num for each digit in the nums array
+        System.out.println("Elements in the array: ");
         for (int num : nums) {
-            System.out.println(num);
+            System.out.print(num + " ");
         }
+        System.out.println();
 
         // Calculates the sum of all nums in the array and prints it
         for (int i = 0; i < nums.length; i++) {
@@ -48,10 +50,11 @@ public class Main {
             left++;
             right--;
         }
-        System.out.println("Reversed:");
+        System.out.println("Reversed Array:");
         for (int i = 0; i < nums.length; i++) {
-            System.out.println(nums[i]);
+            System.out.print(nums[i] + " ");
         }
+        System.out.println();
 
         // Searches for a value in the array, return true if it exists, else return false
         boolean found = false;
@@ -77,13 +80,35 @@ public class Main {
         // Counts even and odd numbers
         int evenCount = 0, oddCount = 0;
         for (int i = 0; i < nums.length; i++) {
-            if(nums[i] % 2 == 0){
+            if (nums[i] % 2 == 0) {
                 evenCount++;
-            }
-            else if(nums[i] % 2 == 1){
+            } else if (nums[i] % 2 == 1) {
                 oddCount++;
             }
         }
-        System.out.println("Even numbers: " + evenCount + " Odd Numbers: " + oddCount);
+        System.out.println("Even Numbers: " + evenCount + " Odd Numbers: " + oddCount);
+
+        // Sorts the array in ascending order using bubble sort
+        boolean swapped;
+        System.out.println("Sorted Array: ");
+        for(int i = 0; i < nums.length - 1; i++) {
+            swapped = false;
+            for(int j = 0; j < nums.length - i - 1; j++) {
+                if(nums[j] >  nums[j + 1]) {
+                    // Swaps nums[j] and nums[j+1]
+                    int temp =  nums[j];
+                    nums[j] = nums[j + 1];
+                    nums[j + 1] = temp;
+                    swapped = true;
+                    // If no two elements are swapped during the inner loop, then break
+                    if(!swapped) {
+                        break;
+                    }
+                }
+            }
+        }
+        for(int i = 0; i < nums.length; i++) { // Prints out the sorted array
+            System.out.print(nums[i] + " ");
+        }
     }
 }
