@@ -5,7 +5,7 @@ public class Main {
         // Practice on Arrays
 
         // Initializes an int array with numbers
-        int[] nums = {30, 50, 10, 40, 20, 55};
+        int[] nums = {30, 50, 10, 40, 20, 55, 50, 23, 47};
         int sum = 0;
         int target = 20;
 
@@ -60,7 +60,7 @@ public class Main {
         boolean found = false;
         for (int i = 0; i < nums.length; i++) {
             if (nums[i] == target) {
-                System.out.println("target value found at index: " + i); // Will return index = 3 since the array was reversed
+                System.out.println("target value found at index: " + i); // Will return index = 4 since the array was reversed
                 found = true;
                 break;
             }
@@ -109,6 +109,20 @@ public class Main {
         }
         for(int i = 0; i < nums.length; i++) { // Prints out the sorted array
             System.out.print(nums[i] + " ");
+        }
+        System.out.println();
+
+       // Finds occurrence of target and prints out indices (returns 1 since array was sorted)
+        found = false;
+        System.out.println("target value found at index: ");
+        for(int i = 0; i < nums.length; i++) {
+            if(nums[i] == target) {
+                System.out.print(i + " ");
+                found = true; // If the target is found, then it flips the boolean
+            }
+        }
+        if(!found) {
+            System.out.println("target value not found");
         }
     }
 }
